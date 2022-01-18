@@ -1,14 +1,17 @@
+from django.db.models.query import QuerySet
+from django.views.generic import ListView
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import Advert
+from django.shortcuts import redirect
+from django.views.generic import View
 
 
-def index(request):
-    adverts = Advert.objects.all()
-    context = {'adverts': adverts, 
-               'title': 'Список новостей'
-    }
-    return render(request,'adverts/index.html',context) 
+class AdvertList(ListView):
+    model = Advert
+    template_name = 'adverts/adverts_list.html'
+    queryset = model.objects.all()
+
+
 
 
 
