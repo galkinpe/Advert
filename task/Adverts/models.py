@@ -20,8 +20,8 @@ class City(models.Model):
 class Advert(models.Model):
     title = models.CharField(max_length=200, verbose_name='Наименование')
     description = models.CharField(max_length=200, verbose_name='Описание')
-    city = models.ForeignKey('City', on_delete=models.PROTECT,)
-    category = models.ForeignKey('Category', on_delete=models.PROTECT )
+    city = models.ForeignKey('City', on_delete=models.PROTECT)
+    category = models.ForeignKey('Category', on_delete=models.PROTECT)
     views = models.IntegerField (default = 0, verbose_name='Просмотров')
 
 
