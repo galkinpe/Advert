@@ -10,9 +10,12 @@ class AdvertAdmin(admin.ModelAdmin):
 
 #class AdvertAdmin(admin.ModelAdmin):
     #list_display = ( 'id', 'title', 'views')
-admin.site.register(Advert)
 admin.site.register(Category)
 admin.site.register(City)
+admin.site.register(Advert, AdvertAdmin)
+
+
+
 
 
 
