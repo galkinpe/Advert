@@ -2,9 +2,9 @@ from django.contrib import admin
 from .models import City, Category, Advert 
 
 
-@admin.register(Category)
-@admin.register(City)
-@admin.register(Advert)
+@admin.register(Advert, Category, City)
+class CategoryAdmin(admin.ModelAdmin):
+    pass
 class AdvertAdmin(admin.ModelAdmin):
     pass
     

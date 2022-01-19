@@ -11,6 +11,7 @@ class Category(models.Model):
     class Meta:
         verbose_name = 'Категорию'
         verbose_name_plural = 'Категории'
+       
 
 class City(models.Model):
     name =  models.CharField(max_length=200,)
@@ -27,7 +28,7 @@ class Advert(models.Model):
     title = models.CharField(max_length=200, verbose_name='Наименование')
     description = models.CharField(max_length=200, verbose_name='Описание')
     city = models.ForeignKey('City', on_delete=models.PROTECT)
-    category = models.ManyToManyField('Category', verbose_name='Категория')
+    category = models.ManyToManyField('Category')
     views = models.IntegerField (default = 0, verbose_name='Просмотров')
 
 
