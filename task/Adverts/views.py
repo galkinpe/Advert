@@ -8,12 +8,12 @@ from django.views.generic import View
 
 class AdvertList(ListView):
     model = Advert
-    template_name = 'adverts/index.html'
+    template_name = 'adverts/base.html'
     queryset = model.objects.all()
 
 class AdvertDetail(DetailView):
     model=Advert
-    template_name = 'adverts/index.html'
+    template_name = 'adverts/advert_list.html'
     queryset = model.objects.all()
 
     def get_queryset(self):

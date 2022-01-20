@@ -11,11 +11,11 @@ class AdvertAdmin(admin.ModelAdmin):
     
 @admin.register(City)
 class CityAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('created_at', 'updated_at')
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('created_at', 'updated_at')
 
     
 

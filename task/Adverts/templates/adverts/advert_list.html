@@ -1,0 +1,19 @@
+{% extends 'advert/base.html' %}
+
+{% block content %}
+{% for item in object_list %}
+<div class="item">
+    <div class="date">
+        <p>Опубликовано: {{ item.created_at }}</p>
+    </div>
+    <h1><a href="{% url 'advert_detail' pk=post.pk %}">{{ item.title }}</a></h1>
+    <p>{{ item.text|linebreaksbr }}</p>
+</div>
+{% endfor %}
+{% endblock %}
+</div>
+</div>
+</div>
+</body>
+
+</html>

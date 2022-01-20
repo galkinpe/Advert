@@ -5,6 +5,8 @@ from django.utils import timezone
 
 class Category(models.Model):
     name =  models.CharField(max_length=200, verbose_name = 'Категория')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата публикации')
+    updated_at = models.DateTimeField(auto_now=True, db_index=True, verbose_name='Обновлено') 
 
     def __str__(self):
         return self.name
@@ -16,6 +18,8 @@ class Category(models.Model):
 
 class City(models.Model):
     name =  models.CharField(max_length=200,)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата публикации')
+    updated_at = models.DateTimeField(auto_now=True, db_index=True, verbose_name='Обновлено') 
 
     def __str__(self):
         return self.name
