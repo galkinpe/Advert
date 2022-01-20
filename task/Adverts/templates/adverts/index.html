@@ -14,9 +14,12 @@
         <p>Объявление: {{ item.title }}</p>
  	        <p>Описание: {{  item.description  }}</p>
  	        <p>Категория: {% for category in category.all %} {{  category.name  }} {% endfor %}</p>
+            <p>Город: {{  item.city  }}</p>
 	        <p>Опубликовано: {{  item.created_at  }}</p>
- 	        <p>Обновлено:{{  item.updated_at  }}</p>
- 	        <p>Город: {{  item.city  }}</p>
+ 	        <p>Обновлено: {{  item.updated_at  }}</p>
+            <p>Просмотров: {{  item.views  }}</p>
+ 	        
+
     </div>
     <hr>
 {% endfor %}
