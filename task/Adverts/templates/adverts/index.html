@@ -12,13 +12,11 @@
 
     <div>
         <p>Объявление: {{ item.title }}</p>
-        <p>Описание: {{  item.description  }}</p>
-        <p>Категория: {{  item.category  }}</p>
-        <p>Создан: {{  item.created_at  }}</p>
-        <p>Обновлен:{{  item.updated_at  }}</p>
-        <p>Город: {{  item.city  }}</p>
-
-
+ 	        <p>Описание: {{  item.description  }}</p>
+ 	        <p>Категория: {% for category in category.advert.all %} {{  category.name  }} {% endfor %}</p>
+	        <p>Создан: {{  item.created_at  }}</p>
+ 	        <p>Обновлен:{{  item.updated_at  }}</p>
+ 	        <p>Город: {{  item.city  }}</p>
     </div>
     <hr>
 {% endfor %}
