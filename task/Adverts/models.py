@@ -31,9 +31,9 @@ class Advert(models.Model):
     city = models.ForeignKey('City', on_delete=models.PROTECT,verbose_name='Город')
     category = models.ManyToManyField('Category',verbose_name='Категория')
     views = models.IntegerField (default=0, verbose_name='Просмотров')
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Создан')
-    updated_at = models.DateTimeField(auto_now=True, db_index=True, verbose_name='Обновлен') 
-    is_published = models.BooleanField(default=True, verbose_name='Опубликован?')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата публикации')
+    updated_at = models.DateTimeField(auto_now=True, db_index=True, verbose_name='Обновлено') 
+    is_published = models.BooleanField(default=True, verbose_name='Опубликовано')
 
     
 
