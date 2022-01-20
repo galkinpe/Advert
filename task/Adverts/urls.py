@@ -7,4 +7,5 @@ from .views import *
 
 urlpatterns = [
      path('', views.AdvertList.as_view(), name='adverts'),
+     path('advert/<int:pk>/', views.AdvertDetail.as_view(), name='advert_detail'),
 ]
