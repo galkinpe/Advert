@@ -1,0 +1,17 @@
+{% extends 'adverts/index.html' %}
+
+{% block content %}
+<div class="post">
+    {% if ad.published_date %}
+    <div class="date">
+        {{ record.published_date }}
+    </div>
+    {% endif %}
+    {% if user.is_authenticated %}
+    <a class="btn btn-default" href="{% url 'post_edit' pk=record.pk %}"><span
+            class="glyphicon glyphicon-pencil"></span></a>
+    {% endif %}
+    <h1>{{ record.title }}</h1>
+    <p>{{ record.text|linebreaksbr }}</p>
+</div>
+{% endblock %}

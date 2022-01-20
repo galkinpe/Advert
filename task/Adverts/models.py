@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.utils import timezone
 
 
 class Category(models.Model):
@@ -27,9 +28,14 @@ class City(models.Model):
 class Advert(models.Model):
     title = models.CharField(max_length=200, verbose_name='Наименование')
     description = models.CharField(max_length=200, verbose_name='Описание')
-    city = models.ForeignKey('City', on_delete=models.PROTECT)
-    category = models.ManyToManyField('Category')
-    views = models.IntegerField (default = 0, verbose_name='Просмотров')
+    city = models.ForeignKey('City', on_delete=models.PROTECT,verbose_name='Город')
+    category = models.ManyToManyField('Category',verbose_name='Категория')
+    views = models.IntegerField (default=0, verbose_name='Просмотров')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Создан')
+    updated_at = models.DateTimeField(auto_now=True, db_index=True, verbose_name='Обновлен') 
+    is_published = models.BooleanField(default=True, verbose_name='Опубликован?')
+
+    
 
 
     def __str__(self):
